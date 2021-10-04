@@ -35,7 +35,7 @@
                 <button id="tambahData" class="py-2 px-4 bg-blue-400 text-white rounded font-semibold">Tambah</button>
             </div>
 
-            <div id="list" class="px-1 flex lg:flex-row flex-col gap-2 w-100 justify-evenly"></div>
+            <div id="list" class="px-1 flex flex-wrap gap-2 w-100 justify-evenly"></div>
         </div>
     </div>
     </div>
@@ -43,7 +43,7 @@
     <div id="modal"
     class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 transform scale-0 transition-transform duration-300">
     <!-- Modal content -->
-    <div class="bg-white w-11/12 lg:w-1/2 h-auto p-12"> 
+    <div class="bg-white w-11/12 lg:w-1/2 h-auto lg:h-auto p-12"> 
         <!--Close modal button-->
         <!-- Test content -->
         <div class="flex justify-between items-center px-4">
@@ -71,25 +71,31 @@
                         <label for="phone" class="text-md text-gray-600">NRP/NIP</label>
                     </div>
                     <div class="">
-                        <input type="text" id="nrp" autocomplete="off" name="nrp" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Example. 0729400426">
+                        <input type="text" id="nrp" autocomplete="off" name="nrp" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Example. 5026201234">
+                    </div>
+                    <div class="">
+                        <label for="phone" class="text-md text-gray-600">Jenis Kelamin</label>
+                    </div>
+                    <div class="">
+                        <input type="text" id="gender" autocomplete="off" name="nrp" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Example. Laki-laki" >
                     </div>
                     <div >
                         <label for="phone" class="text-md text-gray-600">Hobby(Mahasiswa) / Mata kuliah yang diajar(Dosen)</label>
                     </div>
                     <div class="">
-                        <input type="text" id="nrp" autocomplete="off" name="nrp" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Example.Bersepeda / Matematika">
+                        <input type="text" id="hobi" autocomplete="off" name="nrp" class="h-3 p-6 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Example.Bersepeda / Matematika">
                     </div>
                     <div class="">
                         <div class="">
                             <label for="id_number" class="text-md text-gray-600">Status</label>
                         </div>
-                        <select id="status"  class="p-3 w-full rounded border-2 border-gray-300 mb-8 ">
+                        <select id="status"  class="p-3 w-full rounded border-2 border-gray-300 mb-8 " required>
                             <option value="">--Please choose an option--</option>
                             <option value="Mahasiswa" class="">Mahasiswa</option>
                             <option value="Dosen">Dosen</option>
                         </select>
                     </div>
-                        <button class="w-full px-4 py-3 bg-blue-500 text-white font-semibold rounded" id="submitData">Submit</button>
+                        <button  class="w-full px-4 py-3 bg-blue-500 text-white font-semibold rounded" id="submitData">Submit</button>
                     </div>
                 </div>
             </div>
@@ -100,26 +106,16 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="module" src="JS/main.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script> 
         const button = document.getElementById('tambahData')
         const closebutton = document.getElementById('closebutton')
         const modal = document.getElementById('modal')
-        const status = document.querySelector('#status')
-
-        const statusChange = () => {
-            if(select.options[select.selectedIndex].value == "Mahasiswa"){
-                document.querySelector('.mahasiswa').classList.remove('none')
-                document.querySelector('.dosen').classList.add('none')
-            }else{
-                document.querySelector('.mahasiswa').classList.add('none')
-                document.querySelector('.dosen').classList.remove('none')
-            }
-        }
+    
     
         button.addEventListener('click',()=>modal.classList.add('scale-100'))
         closebutton.addEventListener('click',()=>modal.classList.remove('scale-100'))
     </script>
+     <script type="module" src="JS/main.js"></script>
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
