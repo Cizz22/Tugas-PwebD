@@ -1,5 +1,3 @@
-import data from "./data.js";
-
 const listElement = document.querySelector("#list");
 const searchButton = document.querySelector("#searchButton");
 const searchInput = document.querySelector("#searchBar");
@@ -11,6 +9,24 @@ const insertDatainput = {
   status: document.querySelector("#status"),
   gender: document.querySelector("#gender"),
 };
+let data = [
+    {
+      nama: "Aulia Cisatra",
+      nrp: "5026201124",
+      gender: 'Laki-laki',
+      umur: '19',
+      status:"Mahasiswa",
+      hobi:'main game'
+    },
+    {
+      nama: "Kurnia",
+      nrp: "5026201124",
+      gender: 'Laki-laki',
+      umur: '19',
+      status:"Mahasiswa",
+      hobi:'main game'
+    },
+  ];
 
 class dataSource {
   static searchData(pencarian) {
